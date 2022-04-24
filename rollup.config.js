@@ -14,6 +14,16 @@ if (!production) {
 	for (const [key, v] of Object.entries(config().parsed)) {
 		configToReplace[`process.env.${key}`] = `'${v}'`;
 	}
+} else {
+	configToReplace = {
+		'process.env.apiKey': process.env.apiKey,
+		'process.env.authDomain': process.env.authDomain,
+		'process.env.projectId': process.env.projectId,
+		'process.env.storageBucket': process.env.storageBucket,
+		'process.env.messagingSenderId': process.env.messagingSenderId,
+		'process.env.appId': process.env.appId,
+		'process.env.measurementId': process.env.measurementId
+	}
 }
 
 function serve() {
