@@ -52,11 +52,16 @@
 		font-size: 3em;
 		font-weight: 500;
 	}
+
+	#logo {
+		width: 300px;
+	}
 </style>
 <main>
 	{#if user}
 		<Home />
 	{:else}
+		<img id="logo" src="/logo.png" alt="Cute Cow" />
 		<h1>Welcome to CowQR</h1>
 		<Button title="Continue with Google" onClick={() => signInWithPopup(auth, provider)} />
 	{/if}
