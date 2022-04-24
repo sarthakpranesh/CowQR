@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
 import { config } from 'dotenv';
-const configToReplace = {};
+let configToReplace = {};
 
 const production = !process.env.ROLLUP_WATCH;
 
