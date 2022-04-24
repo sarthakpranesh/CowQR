@@ -16,13 +16,13 @@ if (!production) {
 	}
 } else {
 	configToReplace = {
-		'process.env.apiKey': process.env.apiKey,
-		'process.env.authDomain': process.env.authDomain,
-		'process.env.projectId': process.env.projectId,
-		'process.env.storageBucket': process.env.storageBucket,
-		'process.env.messagingSenderId': process.env.messagingSenderId,
-		'process.env.appId': process.env.appId,
-		'process.env.measurementId': process.env.measurementId
+		'process.env.apiKey': `'${process.env.apiKey}'`,
+		'process.env.authDomain': `'${process.env.authDomain}'`,
+		'process.env.projectId': `'${process.env.projectId}'`,
+		'process.env.storageBucket': `'${process.env.storageBucket}'`,
+		'process.env.messagingSenderId': `'${process.env.messagingSenderId}'`,
+		'process.env.appId': `'${process.env.appId}'`,
+		'process.env.measurementId': `'${process.env.measurementId}'`
 	}
 }
 
