@@ -7,12 +7,14 @@ import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
 import { config } from 'dotenv';
 const configToReplace = {};
-for (const [key, v] of Object.entries(config().parsed)) {
-  configToReplace[`process.env.${key}`] = `'${v}'`;
-}
-
 
 const production = !process.env.ROLLUP_WATCH;
+
+if (!production) {
+	for (const [key, v] of Object.entries(config().parsed)) {
+		configToReplace[`process.env.${key}`] = `'${v}'`;
+	}
+}
 
 function serve() {
 	let server;
